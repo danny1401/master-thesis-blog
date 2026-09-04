@@ -18,4 +18,4 @@ const Stats: React.FC = () => {
     )
 }
 
-export default Stats
+export default Stats;
