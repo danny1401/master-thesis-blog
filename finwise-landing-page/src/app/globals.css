@@ -5,12 +5,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #FED835;
-  --secondary: #304fff;
-
-  --primary-accent: #e5c230;
   --foreground-accent: #454545;
+
+  --primary: #f97316;
+  --secondary: #304fff;
+  --primary-accent: #f59e0b;
+
   --hero-background: #F3F3F5;
+}
+
+.dark {
+  --background: #111827;
+  --foreground: #ffffff;
+  --foreground-accent: #e5e5e5;
+  
+  --hero-background: #111827;
 }
 
 html {
@@ -19,9 +28,7 @@ html {
 
 body {
   @apply text-lg;
-  
-  color: var(--foreground);
-  background: var(--background);
+
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
