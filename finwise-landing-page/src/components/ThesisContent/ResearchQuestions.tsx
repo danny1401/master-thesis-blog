@@ -1,4 +1,7 @@
 import React from "react";
+
+import { MoveDown } from "lucide-react";
+
 import SectionContainer from "../Section/SectionContainer";
 import SectionGrid from "../Section/SectionGrid";
 import ChapterTitle from "../Section/ChapterTitle";
@@ -15,12 +18,12 @@ const ResearchQuestions: React.FC = () => {
 
         <SectionParagraph>
           <p>
-            The thesis explored the extent to which software engineering research can be generalized beyond the environment in which it was studied.
+            The thesis explored the extent to which software engineering
+            research can be generalized beyond the environment in which it was
+            studied.
           </p>
-        </SectionParagraph>
 
-        <SectionParagraph>
-          <div>
+          <div className="pt-4">
             <h3 className="font-bold">RQ1:</h3>
             How are threats to experimental procedures reported?
           </div>
@@ -30,26 +33,35 @@ const ResearchQuestions: React.FC = () => {
           </div>
           <div>
             <h3 className="font-bold">RQ3:</h3>
-            Do experimental environments align with the environments researchers want to generalize to?
+            Do experimental environments align with the environments researchers
+            want to generalize to?
           </div>
         </SectionParagraph>
       </SectionGrid>
 
       {/* RIGHT COLUMN */}
-      <SectionGrid side={false}>
-        <div className="flex h-full items-center justify-center gap-3">
-          {["I", "love", "machine", "learning"].map((word, i) => (
-            <div
-              key={word}
-              className="rounded-lg border border-black/10 px-4 py-3 text-sm"
-              style={{ transform: `translateY(${i * -10}px)` }}
-            >
-              {word}
-            </div>
-          ))}
-        </div>
-        <div className="absolute bottom-6 left-8 font-mono text-xs text-neutral-400">
-          sequential processing
+      <SectionGrid className="p-8" side={false}>
+        <div className="flex flex-col h-full items-center text-center justify-center gap-y-5">
+          <div className="border border-foreground bg-section-accent p-5 w-60">
+            Controlled experiment
+          </div>
+
+          <MoveDown />
+
+          <div className="border border-foreground bg-section-accent p-5 w-60">
+            Study findings
+          </div>
+
+          <div className="relative flex items-center justify-center w-full">
+            <MoveDown />
+            <span className="absolute left-[calc(50%+1rem)] whitespace-nowrap text-sm font-medium text-foreground">
+              Can we generalize the results to other contexts?
+            </span>
+          </div>
+
+          <div className="border border-foreground bg-section-accent p-5 w-60">
+            Different Contexts
+          </div>
         </div>
       </SectionGrid>
     </SectionContainer>

@@ -5,6 +5,9 @@ import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
 
+import { MoveRight } from "lucide-react";
+import ExperimentChart from "../Charts/ExperimentChart";
+
 const ResearchMethod: React.FC = () => {
   return (
     <SectionContainer>
@@ -20,24 +23,29 @@ const ResearchMethod: React.FC = () => {
           <p>
             Four raters were involved, with articles independently rated by two raters; disagreements were subsequently discussed for consensus.
           </p>
+          
+          <div className="pt-5 space-y-5">
+            <h4 className="font-semibold">Extraction process:</h4>
+            <div className="flex flex-row gap-x-3 items-center justify-between bg-section border border-foreground py-2 px-10">
+              <span>Articles</span>
+              <span><MoveRight /></span>
+              <span>Experiment</span>
+              <span><MoveRight /></span>
+              <span>Segment</span>
+            </div>
+            <div className="flex flex-row gap-x-3 items-center justify-between bg-section border border-foreground py-2 px-10">
+              <span>Segment</span>
+              <span><MoveRight /></span>
+              <span className="whitespace-nowrap">Threats and generalization claims</span>
+            </div>
+          </div>
         </SectionParagraph>
       </SectionGrid>
 
       {/* RIGHT COLUMN */}
       <SectionGrid side={false}>
-        <div className="flex h-full items-center justify-center gap-3">
-          {["I", "love", "machine", "learning"].map((word, i) => (
-            <div
-              key={word}
-              className="rounded-lg border border-black/10 px-4 py-3 text-sm"
-              style={{ transform: `translateY(${i * -10}px)` }}
-            >
-              {word}
-            </div>
-          ))}
-        </div>
-        <div className="absolute bottom-6 left-8 font-mono text-xs text-neutral-400">
-          sequential processing
+        <div className="px-10"> 
+          <ExperimentChart />
         </div>
       </SectionGrid>
     </SectionContainer>

@@ -6,12 +6,14 @@ export const ResearchColumnContext = createContext<ResearchColumn>("both");
 
 interface Props {
   side: boolean;
+  className?: string;
 }
 
 const SectionGrid: React.FC<React.PropsWithChildren<Props>> = ({
   side,
+  className = "",
   children,
-}: React.PropsWithChildren<Props>) => {
+}) => {
   const column = useContext(ResearchColumnContext);
 
   if (
@@ -25,14 +27,14 @@ const SectionGrid: React.FC<React.PropsWithChildren<Props>> = ({
     <>
       {side ? (
         /* LEFT COLUMN */
-        <div className="flex items-center">
+        <div className={`flex items-center ${className}`}>
           <div className="max-w-xl">
             {children}
           </div>
         </div>
       ) : (
         /* RIGHT COLUMN */
-        <div className="relative aspect-square rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+        <div className={`relative aspect-square border border-foreground bg-section shadow-sm ${className}`}>
           {children}
         </div>
       )}

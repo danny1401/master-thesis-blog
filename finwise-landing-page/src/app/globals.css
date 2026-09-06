@@ -12,6 +12,8 @@
   --primary-accent: #f77e2a;
 
   --hero-background: #f6f3ef;
+  --section: #e6e2dc;
+  --section-accent: #d4cfc9;
 }
 
 .dark {
@@ -20,6 +22,9 @@
   --foreground-accent: #e5e5e5;
   
   --hero-background: #111827;
+  --section: #1a253d;
+  --section-accent: #22304f;
+
 }
 
 html {

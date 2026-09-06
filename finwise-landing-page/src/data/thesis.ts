@@ -1,4 +1,4 @@
-const thesisData = {
+export const thesisData = {
   articles: 81,
   experiments: 150,
   replications: 48,
