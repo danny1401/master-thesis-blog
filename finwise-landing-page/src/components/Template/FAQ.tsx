@@ -2,8 +2,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 
-import SectionTitle from "../SectionTitle";
-import { faqs } from "@/data/faq";
+import SectionTitle from "./SectionTitle";
+import { faqs } from "@/data/mockData/faq";
 
 const FAQ: React.FC = () => {
     return (
