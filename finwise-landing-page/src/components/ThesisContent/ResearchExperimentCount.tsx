@@ -1,27 +1,26 @@
 import React from "react";
-import SectionContainer from "./SectionContainer";
-import SectionGrid from "./SectionGrid";
-import ChapterTitle from "./ChapterTitle";
-import SectionTitle from "./SectionTitle";
-import SectionParagraph from "./SectionParagraph";
+import SectionContainer from "../Section/SectionContainer";
+import SectionGrid from "../Section/SectionGrid";
+import ChapterTitle from "../Section/ChapterTitle";
+import SectionTitle from "../Section/SectionTitle";
+import SectionParagraph from "../Section/SectionParagraph";
 
-const ResearchGeneralization: React.FC = () => {
+const ResearchExperimentCount: React.FC = () => {
   return (
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>06 / The target of generalization</ChapterTitle>
-        <SectionTitle>A gap in the generalizations</SectionTitle>
+        <ChapterTitle>07 / Single Study vs Family of Experiments</ChapterTitle>
+        <SectionTitle>The Strength of Experiments</SectionTitle>
 
         <SectionParagraph>
           <p>
-            Your thesis investigates whether the environment in which an experiment occurs actually matches the environment researchers want to generalize to.
+            The thesis argues that differentiated replications are particularly
+            useful because they deliberately vary contextual conditions.
           </p>
           <p>
-            The environment studied often differs from the environment researchers want to generalize to.
-          </p>
-          <p>
-            The thesis reports that only 8% had the same experimental environment as their target environment, with 92% not matching.
+            And you found that most replications were close replications, rather
+            than differentiated replications.
           </p>
         </SectionParagraph>
       </SectionGrid>
@@ -65,4 +64,4 @@ const ResearchGeneralization: React.FC = () => {
   );
 };
 
-export default ResearchGeneralization;
+export default ResearchExperimentCount;

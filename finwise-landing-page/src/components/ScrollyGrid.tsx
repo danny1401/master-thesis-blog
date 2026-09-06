@@ -2,19 +2,19 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import ResearchTopic from "@/components/ResearchTopic";
-import ResearchQuestions from "@/components/ResearchQuestions";
-import ResearchMethod from "@/components/ResearchMethod";
-import ResearchExternalValidity from "@/components/ResearchExternalValidity";
-import ResearchTechnology from "@/components/ResearchTechnology";
-import ResearchGeneralization from "./ResearchGeneralization";
-import ResearchExperimentCount from "./ResearchExperimentCount";
-import ResearchFindings from "./ResearchFindings";
-import ResearchRecommendations from "./ResearchRecommendations";
+import ResearchTopic from "@/components/ThesisContent/ResearchTopic";
+import ResearchQuestions from "@/components/ThesisContent/ResearchQuestions";
+import ResearchMethod from "@/components/ThesisContent/ResearchMethod";
+import ResearchExternalValidity from "@/components/ThesisContent/ResearchExternalValidity";
+import ResearchTechnology from "@/components/ThesisContent/ResearchTechnology";
+import ResearchGeneralization from "./ThesisContent/ResearchGeneralization";
+import ResearchExperimentCount from "./ThesisContent/ResearchExperimentCount";
+import ResearchFindings from "./ThesisContent/ResearchFindings";
+import ResearchRecommendations from "./ThesisContent/ResearchRecommendations";
 import {
   ResearchColumnContext,
   type ResearchColumn,
-} from "./SectionGrid";
+} from "./Section/SectionGrid";
 
 const sections = [
   {

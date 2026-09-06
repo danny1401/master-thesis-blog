@@ -1,26 +1,21 @@
 import React from "react";
-import SectionContainer from "./SectionContainer";
-import SectionGrid from "./SectionGrid";
-import ChapterTitle from "./ChapterTitle";
-import SectionTitle from "./SectionTitle";
-import SectionParagraph from "./SectionParagraph";
+import SectionContainer from "../Section/SectionContainer";
+import SectionGrid from "../Section/SectionGrid";
+import ChapterTitle from "../Section/ChapterTitle";
+import SectionTitle from "../Section/SectionTitle";
+import SectionParagraph from "../Section/SectionParagraph";
 
-const ResearchExperimentCount: React.FC = () => {
+const ResearchFindings: React.FC = () => {
   return (
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>07 / Single Study vs Family of Experiments</ChapterTitle>
-        <SectionTitle>The Strength of Experiments</SectionTitle>
+        <ChapterTitle>08 / Findings</ChapterTitle>
+        <SectionTitle>Three Major Findings</SectionTitle>
 
         <SectionParagraph>
           <p>
-            The thesis argues that differentiated replications are particularly
-            useful because they deliberately vary contextual conditions.
-          </p>
-          <p>
-            And you found that most replications were close replications, rather
-            than differentiated replications.
+            text
           </p>
         </SectionParagraph>
       </SectionGrid>
@@ -64,4 +59,4 @@ const ResearchExperimentCount: React.FC = () => {
   );
 };
 
-export default ResearchExperimentCount;
+export default ResearchFindings;

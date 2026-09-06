@@ -1,21 +1,24 @@
 import React from "react";
-import SectionContainer from "./SectionContainer";
-import SectionGrid from "./SectionGrid";
-import ChapterTitle from "./ChapterTitle";
-import SectionTitle from "./SectionTitle";
-import SectionParagraph from "./SectionParagraph";
+import SectionContainer from "../Section/SectionContainer";
+import SectionGrid from "../Section/SectionGrid";
+import ChapterTitle from "../Section/ChapterTitle";
+import SectionTitle from "../Section/SectionTitle";
+import SectionParagraph from "../Section/SectionParagraph";
 
-const ResearchFindings: React.FC = () => {
+const ResearchTechnology: React.FC = () => {
   return (
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>08 / Findings</ChapterTitle>
-        <SectionTitle>Three Major Findings</SectionTitle>
+        <ChapterTitle>05 / The Object of the study</ChapterTitle>
+        <SectionTitle>The threat in use of technology</SectionTitle>
 
         <SectionParagraph>
           <p>
-            text
+            Are researchers actually discussing how the technology itself behaves differently in different contexts?
+          </p>
+          <p>
+            Your analysis found that only a relatively small portion of the reporting specifically addresses the selected technologies, while contextual factors dominate.
           </p>
         </SectionParagraph>
       </SectionGrid>
@@ -59,4 +62,4 @@ const ResearchFindings: React.FC = () => {
   );
 };
 
-export default ResearchFindings;
+export default ResearchTechnology;

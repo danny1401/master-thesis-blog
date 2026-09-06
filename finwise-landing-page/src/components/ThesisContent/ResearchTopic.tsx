@@ -1,9 +1,9 @@
 import React from "react";
-import SectionContainer from "./SectionContainer";
-import SectionGrid from "./SectionGrid";
-import ChapterTitle from "./ChapterTitle";
-import SectionTitle from "./SectionTitle";
-import SectionParagraph from "./SectionParagraph";
+import SectionContainer from "../Section/SectionContainer";
+import SectionGrid from "../Section/SectionGrid";
+import ChapterTitle from "../Section/ChapterTitle";
+import SectionTitle from "../Section/SectionTitle";
+import SectionParagraph from "../Section/SectionParagraph";
 
 const ResearchTopic: React.FC = () => {
   return (
@@ -36,18 +36,18 @@ const ResearchTopic: React.FC = () => {
       {/* RIGHT COLUMN */}
       <SectionGrid side={false}>
         <div className="flex h-full items-center justify-center gap-3">
-          {["I", "love", "machine", "learning"].map((word, i) => (
-            <div
-              key={word}
-              className="rounded-lg border border-black/10 px-4 py-3 text-sm"
-              style={{ transform: `translateY(${i * -10}px)` }}
-            >
-              {word}
-            </div>
-          ))}
-        </div>
-        <div className="absolute bottom-6 left-8 font-mono text-xs text-neutral-400">
-          sequential processing
+          <div>
+            Articles
+          </div>
+          <div>
+            Experiments
+          </div>
+          <div>
+            Replications
+          </div>
+          <div>
+            Publication period
+          </div>
         </div>
       </SectionGrid>
     </SectionContainer>

@@ -1,24 +1,24 @@
 import React from "react";
-import SectionContainer from "./SectionContainer";
-import SectionGrid from "./SectionGrid";
-import ChapterTitle from "./ChapterTitle";
-import SectionTitle from "./SectionTitle";
-import SectionParagraph from "./SectionParagraph";
+import SectionContainer from "../Section/SectionContainer";
+import SectionGrid from "../Section/SectionGrid";
+import ChapterTitle from "../Section/ChapterTitle";
+import SectionTitle from "../Section/SectionTitle";
+import SectionParagraph from "../Section/SectionParagraph";
 
-const ResearchExternalValidity: React.FC = () => {
+const ResearchMethod: React.FC = () => {
   return (
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>04 / External validity</ChapterTitle>
-        <SectionTitle>What do researchers actually report?</SectionTitle>
-        
+        <ChapterTitle>03 / THE RESEARCH METHOD</ChapterTitle>
+        <SectionTitle>Data Collection</SectionTitle>
+
         <SectionParagraph>
           <p>
-            External Validity.
+            The methodology involved extracting and categorizing relevant text segments from discussions of external validity in the articles. 
           </p>
           <p>
-            Categores.
+            Four raters were involved, with articles independently rated by two raters; disagreements were subsequently discussed for consensus.
           </p>
         </SectionParagraph>
       </SectionGrid>
@@ -44,4 +44,4 @@ const ResearchExternalValidity: React.FC = () => {
   );
 };
 
-export default ResearchExternalValidity;
+export default ResearchMethod;

@@ -1,24 +1,27 @@
 import React from "react";
-import SectionContainer from "./SectionContainer";
-import SectionGrid from "./SectionGrid";
-import ChapterTitle from "./ChapterTitle";
-import SectionTitle from "./SectionTitle";
-import SectionParagraph from "./SectionParagraph";
+import SectionContainer from "../Section/SectionContainer";
+import SectionGrid from "../Section/SectionGrid";
+import ChapterTitle from "../Section/ChapterTitle";
+import SectionTitle from "../Section/SectionTitle";
+import SectionParagraph from "../Section/SectionParagraph";
 
-const ResearchTechnology: React.FC = () => {
+const ResearchGeneralization: React.FC = () => {
   return (
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>05 / The Object of the study</ChapterTitle>
-        <SectionTitle>The threat in use of technology</SectionTitle>
+        <ChapterTitle>06 / The target of generalization</ChapterTitle>
+        <SectionTitle>A gap in the generalizations</SectionTitle>
 
         <SectionParagraph>
           <p>
-            Are researchers actually discussing how the technology itself behaves differently in different contexts?
+            Your thesis investigates whether the environment in which an experiment occurs actually matches the environment researchers want to generalize to.
           </p>
           <p>
-            Your analysis found that only a relatively small portion of the reporting specifically addresses the selected technologies, while contextual factors dominate.
+            The environment studied often differs from the environment researchers want to generalize to.
+          </p>
+          <p>
+            The thesis reports that only 8% had the same experimental environment as their target environment, with 92% not matching.
           </p>
         </SectionParagraph>
       </SectionGrid>
@@ -62,4 +65,4 @@ const ResearchTechnology: React.FC = () => {
   );
 };
 
-export default ResearchTechnology;
+export default ResearchGeneralization;
