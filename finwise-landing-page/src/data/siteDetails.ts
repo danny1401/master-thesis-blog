@@ -1,12 +1,17 @@
 export const siteDetails = {
-    siteName: 'Finwise',
+    siteName: 'Generalization claims in Software Engineering Research',
+    shortName: 'Generalization claims in SE Research',
+    categoryName: 'Master\'s Thesis',
     siteUrl: 'https://finwise-omega.vercel.app/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'Master\'s Thesis: Generalization claims in Software Engineering Research',
+        description: 'An analysis of threats to external validity in controlled experiments with a focus on technologies and contextual factors.',
     },
     language: 'en-us',
-    locale: 'en-US',
+    locale: 'no-NO',
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
     googleAnalyticsId: '', // e.g. G-XXXXXXX,
+    owner: 'Danny Thinh Tran',
+    repositoryUrl: 'https://github.com/danny1401/master-thesis-blog',
+    portfolioUrl: '/projects',
 }
