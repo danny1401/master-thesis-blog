@@ -37,9 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body
         className={`${manrope.className} ${sourceSans.className} 
-        antialiased bg-background text-gray-900 dark:bg- dark:text-gray-100 transition-colors duration-300
+        antialiased bg-background text-gray-800 dark:bg- dark:text-gray-100 transition-colors duration-300
         `}
       >
         <Header />

@@ -1,4 +1,5 @@
 export const heroDetails = {
+    projecttype: 'Master\'s Thesis',
     projectcategory: 'A Master\'s Thesis Written in the Field of Software Engineering',
     heading1: 'Generalization claims',
     heading2: 'in Software Engineering Research',

@@ -9,7 +9,7 @@ import { FaHouse } from "react-icons/fa6";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 import { siteDetails } from "@/data/siteDetails";
-import { menuItems } from "@/data/menuItems";
+import { menuItems } from "@/data/mockData/menuItems";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+    <header className="bg-transparent top-0 left-0 right-0 absolute z-50">
       {/* Scroll Progress Bar */}
       <div className="w-full bg-gray-200/20 h-1 fixed top-0 left-0 z-50">
         <div
@@ -72,47 +72,35 @@ const Header: React.FC = () => {
 
       {/* Navigation Bar */}
       <nav
-        className={`shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-10 md:py-5 transition-colors duration-200 ${
+        className={`shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-4 px-8 md:py-5 transition-colors duration-200 ${
           mounted && isDarkMode ? "dark:bg-gray-900" : ""
         }`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-x-4">
           <FaHouse className="text-foreground dark:text-foreground min-w-fit w-7 h-7 mb-1" />
-          <span className="manrope text-sm md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
-            {siteDetails.shortSiteName}
+          <span className="hidden sm:block manrope text-sm sm:text-base md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
+            {siteDetails.shortName}
+          </span>
+          <span className="block sm:hidden manrope text-sm sm:text-base md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
+            {siteDetails.categoryName}
           </span>
         </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-6">
-          {/*
-          {menuItems.map((item) => (
-            <li key={item.text}>
-              <Link
-                href={item.url}
-                className="text-foreground dark:text-gray-200 hover:text-foreground-accent dark:hover:text-primary transition-colors"
-              >
-                {item.text}
-              </Link>
-            </li>
-          ))} 
-           */}
-          <li>
-            <button
+        <div className="hidden md:flex items-center gap-6">
+          <button
               onClick={toggleTheme}
               type="button"
               aria-label="Toggle dark mode"
               className="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center justify-center"
             >
               {mounted && isDarkMode ? (
-                <FiSun className="w-5 h-5 text-yellow-400" />
+                <FiSun className="w-5 h-5 text-white" />
               ) : (
                 <FiMoon className="w-5 h-5 text-gray-600" />
               )}
             </button>
-          </li>
-        </ul>
+        </div>
 
         {/* Mobile Menu & Theme Button Container */}
         <div className="md:hidden flex items-center gap-2">
@@ -123,7 +111,7 @@ const Header: React.FC = () => {
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
           >
             {mounted && isDarkMode ? (
-              <FiSun className="w-5 h-5 text-yellow-400" />
+              <FiSun className="w-5 h-5 text-white" />
             ) : (
               <FiMoon className="w-5 h-5 text-gray-600" />
             )}
