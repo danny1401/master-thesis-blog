@@ -24,7 +24,7 @@ const ResearchRecommendations: React.FC = () => {
             The environment studied often differs from the environment researchers want to generalize to.
           </p>
           <p className="italic mt-5 max-w-lg text-lg leading-relaxed text-background-accent">
-            Generalization isn't just about whether an experiment works. It's about where, for whom, and under which conditions it works.
+            Generalization isn&apos;t just about whether an experiment works. It&apos;s about where, for whom, and under which conditions it works.
           </p>
         </SectionParagraph>
         

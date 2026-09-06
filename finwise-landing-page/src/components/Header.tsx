@@ -3,21 +3,18 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
-import { Transition } from "@headlessui/react";
-import { HiOutlineXMark, HiBars3 } from "react-icons/hi2";
 import { FaHouse } from "react-icons/fa6";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 import { siteDetails } from "@/data/siteDetails";
-import { menuItems } from "@/data/mockData/menuItems";
+// import { menuItems } from "@/data/mockData/menuItems";
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  // const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     setMounted(true);
