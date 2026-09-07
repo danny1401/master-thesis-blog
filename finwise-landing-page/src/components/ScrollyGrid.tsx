@@ -101,8 +101,8 @@ export default function ScrollyGrid() {
   return (
     <>
       {/* DESKTOP SCROLLING CONTENT AND STICKY VISUAL */}
-      <div className="mx-auto hidden lg:grid lg:max-w-5xl lg:grid-cols-2 lg:gap-16 xl:max-w-7xl">
-        <div className="desktop-scroll-sections">
+      <div className="mx-auto hidden lg:grid max-w-screen-lg grid-cols-2 gap-10 px-10  xl:px-20 xl:max-w-screen-2xl">
+        <div>
           {sections.map((section, index) => {
             const Section = section.component;
 
@@ -112,7 +112,7 @@ export default function ScrollyGrid() {
                 ref={(element) => {
                   triggerRefs.current[index] = element;
                 }}
-                className="desktop-scroll-section flex min-h-screen items-center py-10"
+                className="flex min-h-screen items-center"
               >
                 {renderSection(Section, "left")}
               </div>
@@ -123,7 +123,7 @@ export default function ScrollyGrid() {
         <div className="sticky top-0 h-screen py-10">
           <div
             key={sections[activeIndex].id}
-            className="desktop-active-section h-full animate-section-in"
+            className="flex flex-col justify-center h-full animate-section-in"
           >
             {renderSection(ActiveSection, "right")}
           </div>

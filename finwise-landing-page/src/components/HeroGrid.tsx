@@ -28,7 +28,7 @@ const HeroGrid: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute left-0 top-0 bottom-0 -z-10 w-full">
+    <div className="hidden sm:absolute left-0 top-0 bottom-0 -z-10 w-full">
       {isDarkMode ? (
         /* Dark Mode Container */
         <div className={`${baseClasses} bg-[linear-gradient(to_right,#d8d8d812_1px,transparent_1px),linear-gradient(to_bottom,#d8d8d812_1px,transparent_1px)]`} />

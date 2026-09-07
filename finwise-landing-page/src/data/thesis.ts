@@ -1,6 +1,9 @@
 export const thesisData = {
   articles: 81,
   experiments: 150,
+  segment: null,
+  threats: 291,
+
   replications: 48,
 
   segmentCategories: [
@@ -16,5 +19,5 @@ export const thesisData = {
     { name: "Differentiated", count: 5 },
     { name: "Internal", count: 10 },
     { name: "External", count: 2 },
-  ]
-}
+  ],
+};
