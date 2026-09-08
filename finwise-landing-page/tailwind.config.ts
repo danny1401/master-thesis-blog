@@ -19,6 +19,7 @@ const config: Config = {
         "hero-background": "var(--hero-background)",
         section: "var(--section)",
         "section-accent": "var(--section-accent)",
+        bar: "var(--bar)",
       },
     },
   },

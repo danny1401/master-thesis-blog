@@ -21,6 +21,7 @@ export const chartConfig = {
 
   // ---------- Chart ----------
   barColor: "var(--primary)",
+  alternateBarColor: "var(--bar)",
   barHoverColor: "var(--primary-accent)",
   barInactiveOpacity: 0.2,
 

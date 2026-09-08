@@ -1,7 +1,7 @@
 export const thesisData = {
   articles: 81,
   experiments: 150,
-  segment: 291,
+  segments: 291,
   method: 67,
   method_threats: 71,
 
