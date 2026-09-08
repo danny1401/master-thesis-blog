@@ -1,13 +1,11 @@
 import React from "react";
-import { motion, Variants } from "framer-motion";
-import { MoveDown } from "lucide-react";
-
 import SectionContainer from "../Section/SectionContainer";
 import SectionGrid from "../Section/SectionGrid";
 import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
 import ChartHeader from "../Charts/ChartHeader";
+import FlowChartGeneralization from "../Charts/FlowChartGeneralization";
 
 const ResearchQuestions: React.FC = () => {
   return (
@@ -53,28 +51,7 @@ const ResearchQuestions: React.FC = () => {
               </p>
             </div>
           </ChartHeader>
-          <div className="flex flex-col h-full items-center pt-16 font-medium text-center justify-center gap-y-5">
-            <div className="border-2 border-foreground bg-section-accent p-5 w-60 hover:bg-background">
-              Controlled experiment
-            </div>
-
-            <MoveDown />
-
-            <div className="border-2 border-foreground bg-section-accent p-5 w-60 hover:bg-background">
-              Study findings
-            </div>
-
-            <div className="relative flex items-center justify-center w-full">
-              <MoveDown />
-              <span className="absolute left-[calc(50%+1rem)] text-left text-xs sm:text-sm text-foreground">
-                Can we generalize the results to other contexts?
-              </span>
-            </div>
-
-            <div className="border-2 border-foreground bg-section-accent p-5 w-60 hover:bg-background">
-              Different Contexts
-            </div>
-          </div>
+          <FlowChartGeneralization />
         </div>
       </SectionGrid>
     </SectionContainer>

@@ -5,8 +5,6 @@ import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
 
-import DistributionChart from "../Charts/DistributionChart";
-
 const ResearchGeneralization: React.FC = () => {
   return (
     <SectionContainer>
