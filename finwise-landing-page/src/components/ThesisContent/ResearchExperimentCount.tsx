@@ -12,7 +12,7 @@ const ResearchExperimentCount: React.FC = () => {
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>07 / Single Study vs Family of Experiments</ChapterTitle>
+        <ChapterTitle>07 / Single vs Experiments Family</ChapterTitle>
         <SectionTitle>The Strength of Experiments</SectionTitle>
 
         <SectionParagraph>

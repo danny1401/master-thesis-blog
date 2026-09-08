@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #f4f1eb;
+  --background: #e6e2dc;
   --foreground: #171717;
   --foreground-accent: #454545;
 
@@ -14,8 +14,8 @@
   --bar: #3b82f6;
 
   --hero-background: #f6f3ef;
-  --section: #e6e2dc;
-  --section-accent: #d4cfc9;
+  --section: #d4cfc9;
+  --section-accent: #c4bbaf;
 }
 
 .dark {
