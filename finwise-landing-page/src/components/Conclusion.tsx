@@ -10,7 +10,7 @@ const Conclusion: React.FC = () => {
           Generalization isn&apos;t just about whether an experiment works. 
           <br />
           <i>
-            It&apos;s about where, for whom, and under which conditions it works.
+            It&apos;s about where, for whom, and under which conditions it works and can apply to.
           </i>
       </div>
     </section>

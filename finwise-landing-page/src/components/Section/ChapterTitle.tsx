@@ -8,7 +8,7 @@ const ChapterTitle: React.FC<React.PropsWithChildren<Props>> = ({
   children,
 }: React.PropsWithChildren<Props>) => {
   return (
-    <p className="font-mono text-xs uppercase tracking-[0.2em] text-background-accent">
+    <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
       {children}
     </p>
   );

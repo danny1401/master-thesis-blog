@@ -26,7 +26,7 @@ const ResearchTopic: React.FC = () => {
             beyond the environment in which it was studied?
           </p>
           <p>
-            To argue for generalization, one needs to articulate threats to
+            To argue for generalization, one needs to articulate the threats to
             external validity in a study and specify the conditions in which
             their results may not be extended to.
           </p>
@@ -40,22 +40,22 @@ const ResearchTopic: React.FC = () => {
 
       {/* RIGHT COLUMN */}
       <SectionGrid side={false}>
-        <div className="grid grid-cols-2 h-full text-center justify-center gap-px bg-foreground">
+        <div className="grid grid-cols-2 h-full text-foreground text-center justify-center gap-px bg-foreground">
           <div className="flex flex-col justify-center items-center bg-section-accent p-4">
             <div className="font-bold text-5xl mb-3">{thesisData.articles}</div>
             <div>Articles</div>
           </div>
           <div className="flex flex-col justify-center items-center bg-section p-4">
+            <div className="font-bold text-3xl sm:text-5xl sm:mb-3 whitespace-nowrap">2015-2019</div>
+            <div>Publication period</div>
+          </div>
+          <div className="flex flex-col justify-center items-center bg-section p-4">
             <div className="font-bold text-5xl mb-3">{thesisData.experiments}</div>
             <div>Experiments</div>
           </div>
-          <div className="flex flex-col justify-center items-center bg-section p-4">
-            <div className="font-bold text-5xl mb-3">{thesisData.replications}</div>
-            <div>Replications</div>
-          </div>
           <div className="flex flex-col justify-center items-center bg-section-accent p-4">
-            <div className="font-bold text-5xl mb-3 whitespace-nowrap">2015-2019</div>
-            <div>Publication period</div>
+            <div className="font-bold text-5xl mb-3">{thesisData.segments}</div>
+            <div>Segments</div>
           </div>
         </div>
       </SectionGrid>

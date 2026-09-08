@@ -5,6 +5,8 @@ import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
 
+import DistributionChart from "../Charts/DistributionChart";
+
 const ResearchExperimentCount: React.FC = () => {
   return (
     <SectionContainer>
@@ -14,6 +16,9 @@ const ResearchExperimentCount: React.FC = () => {
         <SectionTitle>The Strength of Experiments</SectionTitle>
 
         <SectionParagraph>
+          <p className="text-red-500">
+            single studies vs family experiments
+          </p>
           <p>
             The thesis argues that differentiated replications are particularly
             useful because they deliberately vary contextual conditions.
@@ -27,38 +32,7 @@ const ResearchExperimentCount: React.FC = () => {
 
       {/* RIGHT COLUMN */}
       <SectionGrid side={false}>
-        <div className="grid h-full place-items-center">
-          {" "}
-          <div className="grid grid-cols-3 gap-8 text-background">
-            {" "}
-            {[
-              "I",
-              "love",
-              "AI",
-              "and",
-              "attention",
-              "too",
-              "much",
-              "today",
-              "?",
-            ].map((word, i) => (
-              <div
-                key={`${word}-${i}`}
-                className={` relative rounded-lg border px-4 py-3 text-center text-sm transition-all ${i === 4 ? "bg-black text-white" : "bg-white"} `}
-              >
-                {" "}
-                {word}{" "}
-                {i === 4 && (
-                  <div className="absolute inset-0 -z-10 animate-pulse rounded-lg bg-black/10" />
-                )}{" "}
-              </div>
-            ))}{" "}
-          </div>{" "}
-        </div>{" "}
-        <div className="absolute bottom-6 left-8 font-mono text-xs text-neutral-400">
-          {" "}
-          every token can attend to every other token{" "}
-        </div>{" "}
+        <DistributionChart />
       </SectionGrid>
     </SectionContainer>
   );

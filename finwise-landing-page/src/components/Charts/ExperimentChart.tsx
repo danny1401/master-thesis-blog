@@ -8,106 +8,39 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { useState } from "react";
 
-type ExperimentData = {
-  type: string;
-  frequency: number;
-  percentage: number;
-};
+import ChartTooltip from "@/components/Charts/ChartTooltip";
+import ChartHeader from "@/components/Charts/ChartHeader";
+import ChartFooter from "@/components/Charts/ChartFooter";
 
-const data: ExperimentData[] = [
-  {
-    type: "Controlled experiment",
-    frequency: 99,
-    percentage: 66,
-  },
-  {
-    type: "Quasi experiment",
-    frequency: 17,
-    percentage: 11.3,
-  },
-  {
-    type: "Replication",
-    frequency: 17,
-    percentage: 11.3,
-  },
-  {
-    type: "Empirical study",
-    frequency: 7,
-    percentage: 4.6,
-  },
-  {
-    type: "Other",
-    frequency: 6,
-    percentage: 4.0,
-  },
-];
-
-function CustomTooltip({
-  active,
-  payload,
-}: {
-  active?: boolean;
-  payload?: Array<{
-    payload: ExperimentData;
-  }>;
-}) {
-  if (!active || !payload?.length) return null;
-
-  const item = payload[0].payload;
-
-  return (
-    <div className="rounded-xl border border-zinc-200 bg-white px-4 py-3 shadow-xl">
-      <p className="mb-3 text-sm font-medium text-zinc-900">{item.type}</p>
-
-      <div className="flex gap-6">
-        <div>
-          <p className="text-xs text-zinc-400">Frequency</p>
-          <p className="mt-0.5 text-lg font-semibold text-zinc-900">
-            {item.frequency}
-          </p>
-        </div>
-
-        <div>
-          <p className="text-xs text-zinc-400">Percentage</p>
-          <p className="mt-0.5 text-lg font-semibold text-zinc-900">
-            {item.percentage}%
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { thesisData } from "@/data/thesis";
+import { experiments, ExperimentData } from "@/data/chartData/experiment";
+import { chartConfig } from "@/data/chartConfig";
 
 export default function ExperimentChart() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
-    <div className="w-full">
-      <div className="flex items-end justify-between gap-6">
+    <div className="w-full my-5 px-10">
+      <ChartHeader>
         <div>
-          <h3 className="text-2xl font-semibold tracking-tight text-zinc-900">
+          <h3 className="text-2xl font-semibold tracking-tight">
             Types of experiments
           </h3>
-
-          <p className="mt-2 text-sm text-zinc-500">
-            Frequency across 150 articles
+          <p className="mt-2 text-sm text-secondary">
+            Frequency across {thesisData.articles} articles
           </p>
         </div>
 
         <div className="hidden text-right sm:block">
-          <p className="text-3xl font-semibold tracking-tight text-zinc-900">
-            150
-          </p>
-          <p className="text-xs text-zinc-400">articles</p>
+          <p className="text-3xl font-semibold tracking-tight">{thesisData.experiments}</p>
+          <p className="text-xs text-secondary">experiments</p>
         </div>
-      </div>
+      </ChartHeader>
 
-      <div className="h-[500px] w-full">
+      {/* Chart */}
+      <div style={{ height: chartConfig.chartHeight }} className="w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={data}
+            data={experiments}
             layout="vertical"
             margin={{
               top: 4,
@@ -115,60 +48,94 @@ export default function ExperimentChart() {
               bottom: 4,
               left: 8,
             }}
-            onMouseLeave={() => setActiveIndex(null)}
           >
+            {/* Grid */}
             <CartesianGrid
               horizontal={false}
               strokeDasharray="2 4"
-              className="stroke-zinc-200"
+              stroke={chartConfig.gridColor}
             />
 
+            {/* X Axis */}
             <XAxis
               type="number"
-              domain={[0, 105]}
-              ticks={[0, 25, 50, 75, 100]}
+              domain={[0, 100]}
+              ticks={chartConfig.axisTicks}
               tickLine={false}
               axisLine={false}
               tick={{
                 fontSize: 11,
-                fill: "#a1a1aa",
+                fill: chartConfig.axisColor,
               }}
             />
 
+            {/* Y Axis */}
             <YAxis
               type="category"
               dataKey="type"
-              width={165}
+              width={170}
               tickLine={false}
               axisLine={false}
               tick={{
+                fill: chartConfig.labelColor,
                 fontSize: 12,
-                fill: "#52525b",
+                fontWeight: 500,
               }}
             />
 
+            {/* Tooltip */}
             <Tooltip
-              content={<CustomTooltip />}
-              cursor={{
-                fill: "rgba(0, 0, 0, 0.025)",
+              cursor={{ fill: "rgba(243, 244, 246, 0.3)" }}
+              content={
+                <ChartTooltip<ExperimentData> getTitle={(item) => item.type}>
+                  {(item) => (
+                    <div className="flex gap-6">
+                      <div>
+                        <p className="text-xs text-neutral-500">Frequency</p>
+
+                        <p className="mt-0.5 text-lg font-semibold text-neutral-800">
+                          {item.frequency}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-xs text-neutral-500">Percentage</p>
+
+                        <p className="mt-0.5 text-lg font-semibold text-neutral-800">
+                          {item.percentage}%
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </ChartTooltip>
+              }
+              wrapperStyle={{
+                outline: "none",
+                zIndex: 50,
               }}
             />
 
+            {/* Bars */}
             <Bar
               dataKey="frequency"
-              radius={[0, 6, 6, 0]}
-              barSize={50}
+              radius={[0, chartConfig.barRadius, chartConfig.barRadius, 0]}
+              barSize={chartConfig.barHeight}
               animationDuration={900}
               animationEasing="ease-out"
-              onMouseEnter={(_, index) => setActiveIndex(index)}
+              label={{
+                position: "right",
+                fill: "var(--secondary)",
+                fontSize: 13,
+                fontWeight: 600,
+              }}
             >
-              {data.map((_, index) => (
+              {experiments.map((_, index) => (
                 <Cell
                   key={index}
-                  className="transition-opacity duration-200"
-                  fillOpacity={
-                    activeIndex === null || activeIndex === index ? 1 : 0.25
-                  }
+                  fill={chartConfig.barColor}
+                  style={{
+                    transition: "fill 200ms ease, fill-opacity 200ms ease",
+                  }}
                 />
               ))}
             </Bar>
@@ -176,13 +143,14 @@ export default function ExperimentChart() {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-3 flex items-center justify-between">
-        <p className="text-xs text-zinc-400">
-          Hover over a bar to explore the data
-        </p>
-
-        <p className="text-xs text-zinc-400">Frequency</p>
-      </div>
+      <ChartFooter>
+        <p>Hover over a bar to explore the data</p>
+        
+        <div className="flex flex-row gap-x-1">
+          <div className="bg-primary p-2" />
+          <div>Frequency</div>
+        </div>
+      </ChartFooter>
     </div>
   );
 }
