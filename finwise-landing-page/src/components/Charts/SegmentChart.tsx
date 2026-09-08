@@ -20,7 +20,6 @@ import { chartConfig } from "@/data/chartConfig";
 export function SegmentsChart() {
   return (
     <div className="flex flex-col justify-center w-full my-5 px-10">
-      {/* Header */}
       <ChartHeader>
         <div>
           <h3 className="text-2xl font-semibold tracking-tight">
@@ -32,7 +31,9 @@ export function SegmentsChart() {
         </div>
 
         <div className="hidden text-right sm:block">
-          <p className="text-3xl font-semibold tracking-tight">{thesisData.segment}</p>
+          <p className="text-3xl font-semibold tracking-tight">
+            {thesisData.segments}
+          </p>
           <p className="text-xs text-secondary">segments</p>
         </div>
       </ChartHeader>
@@ -57,15 +58,16 @@ export function SegmentsChart() {
               stroke={chartConfig.gridColor}
             />
 
-            <XAxis 
-              type="number" 
-              domain={[0, 100]} 
+            <XAxis
+              type="number"
+              domain={[0, 100]}
               ticks={chartConfig.axisTicks}
               tickLine={false}
               axisLine={false}
               tick={{
-                fontSize: 11,
                 fill: chartConfig.axisColor,
+                fontWeight: 600,
+                fontSize: 13,
               }}
             />
 
@@ -77,15 +79,13 @@ export function SegmentsChart() {
               tickLine={false}
               tick={{
                 fill: chartConfig.labelColor,
-                fontSize: 12,
-                fontWeight: 500,
+                fontWeight: 600,
+                fontSize: 15,
               }}
             />
 
             <Tooltip
-              cursor={{
-                fill: "rgba(0, 0, 0, 0.025)",
-              }}
+              cursor={{ fill: "rgba(243, 244, 246, 0.3)" }}
               content={
                 <ChartTooltip<SegmentCategory>
                   getTitle={(item) => item.category}
@@ -118,7 +118,7 @@ export function SegmentsChart() {
               label={{
                 position: "right",
                 fill: "var(--secondary)",
-                fontSize: 13,
+                fontSize: 15,
                 fontWeight: 600,
               }}
             >
@@ -138,7 +138,11 @@ export function SegmentsChart() {
 
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
-        <p>Number of reported threats identified</p>
+        
+        <div className="flex flex-row gap-x-1">
+          <div className="bg-primary p-2" />
+          <div>Number of reported threats identified</div>
+        </div>
       </ChartFooter>
     </div>
   );

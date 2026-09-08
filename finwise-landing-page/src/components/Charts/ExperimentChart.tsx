@@ -85,6 +85,7 @@ export default function ExperimentChart() {
 
             {/* Tooltip */}
             <Tooltip
+              cursor={{ fill: "rgba(243, 244, 246, 0.3)" }}
               content={
                 <ChartTooltip<ExperimentData> getTitle={(item) => item.type}>
                   {(item) => (
@@ -108,9 +109,6 @@ export default function ExperimentChart() {
                   )}
                 </ChartTooltip>
               }
-              cursor={{
-                fill: "rgba(0, 0, 0, 0.025)",
-              }}
               wrapperStyle={{
                 outline: "none",
                 zIndex: 50,
@@ -147,7 +145,11 @@ export default function ExperimentChart() {
 
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
-        <p>Frequency</p>
+        
+        <div className="flex flex-row gap-x-1">
+          <div className="bg-primary p-2" />
+          <div>Frequency</div>
+        </div>
       </ChartFooter>
     </div>
   );

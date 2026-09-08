@@ -83,9 +83,7 @@ export function TechnologyChart() {
             />
 
             <Tooltip
-              cursor={{
-                fill: "rgba(0, 0, 0, 0.025)",
-              }}
+              cursor={{ fill: "rgba(243, 244, 246, 0.3)" }}
               content={
                 <ChartTooltip<TechnologyThreats>
                   getTitle={(item) => item.category}
@@ -138,7 +136,11 @@ export function TechnologyChart() {
 
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
-        <p>Number of reported threats identified</p>
+        
+        <div className="flex flex-row gap-x-1">
+          <div className="bg-primary p-2" />
+          <div>Number of reported threats identified</div>
+        </div>
       </ChartFooter>
     </div>
   );
