@@ -14,16 +14,17 @@ import ChartHeader from "./ChartHeader";
 import ChartFooter from "./ChartFooter";
 
 import { thesisData } from "@/data/thesis";
-import { experiments, ExperimentData } from "@/data/experiment";
+import { SegmentCategory, segmentCategories } from "@/data/segment";
 import { chartConfig } from "@/data/chartConfig";
 
-export default function ExperimentChart() {
+export function SegmentsChart() {
   return (
-    <div className="w-full my-5 px-10">
+    <div className="flex flex-col justify-center w-full my-5 px-10">
+      {/* Header */}
       <ChartHeader>
         <div>
           <h3 className="text-2xl font-semibold tracking-tight">
-            Types of experiments
+            Segment Categories
           </h3>
           <p className="mt-2 text-sm text-secondary">
             Frequency across {thesisData.articles} articles
@@ -31,23 +32,23 @@ export default function ExperimentChart() {
         </div>
 
         <div className="hidden text-right sm:block">
-          <p className="text-3xl font-semibold tracking-tight">{thesisData.experiments}</p>
-          <p className="text-xs text-secondary">experiments</p>
+          <p className="text-3xl font-semibold tracking-tight">{thesisData.segment}</p>
+          <p className="text-xs text-secondary">segments</p>
         </div>
       </ChartHeader>
 
-      {/* Chart */}
       <div style={{ height: chartConfig.chartHeight }} className="w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={experiments}
+            data={segmentCategories}
             layout="vertical"
             margin={{
-              top: 4,
-              right: 24,
-              bottom: 4,
+              top: 8,
+              right: 48,
+              bottom: 8,
               left: 8,
             }}
+            barCategoryGap="28%"
           >
             {/* Grid */}
             <CartesianGrid
@@ -56,10 +57,9 @@ export default function ExperimentChart() {
               stroke={chartConfig.gridColor}
             />
 
-            {/* X Axis */}
-            <XAxis
-              type="number"
-              domain={[0, 100]}
+            <XAxis 
+              type="number" 
+              domain={[0, 100]} 
               ticks={chartConfig.axisTicks}
               tickLine={false}
               axisLine={false}
@@ -69,13 +69,12 @@ export default function ExperimentChart() {
               }}
             />
 
-            {/* Y Axis */}
             <YAxis
               type="category"
-              dataKey="type"
+              dataKey="category"
               width={chartConfig.labelWidth}
-              tickLine={false}
               axisLine={false}
+              tickLine={false}
               tick={{
                 fill: chartConfig.labelColor,
                 fontSize: 12,
@@ -83,43 +82,35 @@ export default function ExperimentChart() {
               }}
             />
 
-            {/* Tooltip */}
             <Tooltip
-              content={
-                <ChartTooltip<ExperimentData> getTitle={(item) => item.type}>
-                  {(item) => (
-                    <div className="flex gap-6">
-                      <div>
-                        <p className="text-xs text-neutral-500">Frequency</p>
-
-                        <p className="mt-0.5 text-lg font-semibold text-neutral-800">
-                          {item.frequency}
-                        </p>
-                      </div>
-
-                      <div>
-                        <p className="text-xs text-neutral-500">Percentage</p>
-
-                        <p className="mt-0.5 text-lg font-semibold text-neutral-800">
-                          {item.percentage}%
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </ChartTooltip>
-              }
               cursor={{
                 fill: "rgba(0, 0, 0, 0.025)",
               }}
+              content={
+                <ChartTooltip<SegmentCategory>
+                  getTitle={(item) => item.category}
+                >
+                  {(item) => (
+                    <>
+                      <p className="text-xs leading-relaxed text-[var(--chart-tooltip-text)]">
+                        {item.definition}
+                      </p>
+
+                      <p className="mt-2 text-[10px] tracking-wider text-[var(--chart-tooltip-muted)]">
+                        Segments: {item.count}
+                      </p>
+                    </>
+                  )}
+                </ChartTooltip>
+              }
               wrapperStyle={{
                 outline: "none",
                 zIndex: 50,
               }}
             />
 
-            {/* Bars */}
             <Bar
-              dataKey="frequency"
+              dataKey="count"
               radius={[0, chartConfig.barRadius, chartConfig.barRadius, 0]}
               barSize={chartConfig.barHeight}
               animationDuration={900}
@@ -131,9 +122,9 @@ export default function ExperimentChart() {
                 fontWeight: 600,
               }}
             >
-              {experiments.map((_, index) => (
+              {segmentCategories.map((item) => (
                 <Cell
-                  key={index}
+                  key={item.category}
                   fill={chartConfig.barColor}
                   style={{
                     transition: "fill 200ms ease, fill-opacity 200ms ease",
@@ -147,7 +138,7 @@ export default function ExperimentChart() {
 
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
-        <p>Frequency</p>
+        <p>Number of reported threats identified</p>
       </ChartFooter>
     </div>
   );

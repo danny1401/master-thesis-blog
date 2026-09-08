@@ -1,8 +1,8 @@
 export const thesisData = {
   articles: 81,
   experiments: 150,
-  segment: null,
-  threats: 291,
+  segment: 291,
+  threats: null,
 
   replications: 48,
 

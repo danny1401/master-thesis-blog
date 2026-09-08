@@ -54,7 +54,7 @@ const ResearchQuestions: React.FC = () => {
 
           <div className="relative flex items-center justify-center w-full">
             <MoveDown />
-            <span className="absolute left-[calc(50%+1rem)] whitespace-nowrap text-sm font-medium text-foreground">
+            <span className="absolute left-[calc(50%+1rem)] text-left text-xs sm:text-sm font-medium text-foreground">
               Can we generalize the results to other contexts?
             </span>
           </div>

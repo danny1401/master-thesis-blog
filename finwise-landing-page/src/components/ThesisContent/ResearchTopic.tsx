@@ -54,7 +54,7 @@ const ResearchTopic: React.FC = () => {
             <div>Replications</div>
           </div>
           <div className="flex flex-col justify-center items-center bg-section-accent p-4">
-            <div className="font-bold text-5xl mb-3 whitespace-nowrap">2015-2019</div>
+            <div className="font-bold text-3xl sm:text-5xl sm:mb-3 whitespace-nowrap">2015-2019</div>
             <div>Publication period</div>
           </div>
         </div>

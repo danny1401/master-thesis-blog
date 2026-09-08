@@ -8,7 +8,7 @@
   --foreground-accent: #454545;
 
   --primary: #f97316;
-  --secondary: #304fff;
+  --secondary: #22304f;
   --primary-accent: #f77e2a;
 
   --hero-background: #f6f3ef;
@@ -20,6 +20,8 @@
   --background: #111827;
   --foreground: #ffffff;
   --foreground-accent: #e5e5e5;
+
+  --secondary: #f6f3ef;
   
   --hero-background: #111827;
   --section: #1a253d;
@@ -110,4 +112,10 @@ h1, h2, h3, h4, h5, h6 {
   .animate-visual-in {
     animation: none;
   }
+}
+
+/* Removes focus outline from the Recharts container */
+.recharts-wrapper:focus, 
+.recharts-surface:focus {
+  outline: none !important;
 }
