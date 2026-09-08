@@ -16,10 +16,16 @@ const ResearchExternalValidity: React.FC = () => {
         <SectionTitle>What do researchers actually report?</SectionTitle>
 
         <SectionParagraph>
+          <p className="text-red-500">
+            ev explanation
+          </p>
           <p>
             The most frequently mentioned threats in the discussions of external
-            validity revolved around subjects, method, system, definition, and
+            validity revolved around subjects, followed by method, system, definition, and
             task.
+          </p>
+          <p className="text-red-500">
+            1 more sentence
           </p>
         </SectionParagraph>
       </SectionGrid>

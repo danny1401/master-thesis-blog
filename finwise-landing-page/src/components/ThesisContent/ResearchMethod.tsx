@@ -17,6 +17,13 @@ const ResearchMethod: React.FC = () => {
         <SectionTitle>Data Collection</SectionTitle>
 
         <SectionParagraph>
+          <p className="text-red-500">
+            The use of controlled experiments
+          </p>
+          <p className="text-red-500">
+            - fix antall experiments etter other
+          </p>
+
           <p>
             The methodology involved extracting and categorizing relevant text segments from discussions of external validity in the articles. 
           </p>

@@ -16,6 +16,11 @@ const ResearchTechnology: React.FC = () => {
         <SectionTitle>The use of technology</SectionTitle>
 
         <SectionParagraph>
+          <p className="text-red-500">
+            diving into method segments
+            <br />
+            explanation of technology and environment
+          </p>
           <p>
             Are researchers actually discussing how the technology itself behaves differently in different contexts?
           </p>

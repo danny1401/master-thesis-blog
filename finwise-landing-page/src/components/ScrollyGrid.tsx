@@ -38,12 +38,12 @@ const sections = [
     component: ResearchTechnology,
   },
   {
-    id: "generalization",
-    component: ResearchGeneralization,
-  },
-  {
     id: "single-experiment-versus-multiple-experiments",
     component: ResearchExperimentCount,
+  },
+  {
+    id: "generalization",
+    component: ResearchGeneralization,
   },
   {
     id: "findings",
