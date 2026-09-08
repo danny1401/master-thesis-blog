@@ -10,11 +10,11 @@ import {
 } from "recharts";
 
 import ChartTooltip from "@/components/Charts/ChartTooltip";
-import ChartHeader from "./ChartHeader";
-import ChartFooter from "./ChartFooter";
+import ChartHeader from "@/components/Charts/ChartHeader";
+import ChartFooter from "@/components/Charts/ChartFooter";
 
 import { thesisData } from "@/data/thesis";
-import { SegmentCategory, segmentCategories } from "@/data/segment";
+import { SegmentCategory, segmentCategories } from "@/data/chartData/segment";
 import { chartConfig } from "@/data/chartConfig";
 
 export function SegmentsChart() {
@@ -97,7 +97,7 @@ export function SegmentsChart() {
                       </p>
 
                       <p className="mt-2 text-[10px] tracking-wider text-[var(--chart-tooltip-muted)]">
-                        Segments: {item.count}
+                        Segment frequency: {item.count}
                       </p>
                     </>
                   )}

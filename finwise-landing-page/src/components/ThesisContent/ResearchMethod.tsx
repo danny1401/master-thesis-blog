@@ -23,14 +23,14 @@ const ResearchMethod: React.FC = () => {
           
           <div className="pt-2 space-y-5">
             <h4 className="font-semibold">Extraction process:</h4>
-            <div className="flex flex-row gap-x-3 items-center justify-between bg-section text-sm sm:text-base border border-foreground py-0 sm:py-2 px-2 sm:px-10">
+            <div className="flex flex-row gap-x-3 items-center justify-between bg-section-accent text-sm sm:text-base border border-foreground py-0 sm:py-2 px-2 sm:px-10">
               <span>Articles</span>
               <span><MoveRight /></span>
               <span>Experiment</span>
               <span><MoveRight /></span>
               <span>Segment</span>
             </div>
-            <div className="flex flex-row gap-x-3 items-center justify-between bg-section text-sm sm:text-base border border-foreground py-0 sm:py-2 px-2 sm:px-10">
+            <div className="flex flex-row gap-x-3 items-center justify-between bg-section-accent text-sm sm:text-base border border-foreground py-0 sm:py-2 px-2 sm:px-10">
               <span>Segment</span>
               <span><MoveRight /></span>
               <span className="whitespace-nowrap">Threats and generalization claims</span>

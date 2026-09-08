@@ -10,11 +10,11 @@ import {
 } from "recharts";
 
 import ChartTooltip from "@/components/Charts/ChartTooltip";
-import ChartHeader from "./ChartHeader";
-import ChartFooter from "./ChartFooter";
+import ChartHeader from "@/components/Charts/ChartHeader";
+import ChartFooter from "@/components/Charts/ChartFooter";
 
 import { thesisData } from "@/data/thesis";
-import { experiments, ExperimentData } from "@/data/experiment";
+import { experiments, ExperimentData } from "@/data/chartData/experiment";
 import { chartConfig } from "@/data/chartConfig";
 
 export default function ExperimentChart() {
@@ -73,7 +73,7 @@ export default function ExperimentChart() {
             <YAxis
               type="category"
               dataKey="type"
-              width={chartConfig.labelWidth}
+              width={170}
               tickLine={false}
               axisLine={false}
               tick={{
