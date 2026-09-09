@@ -138,7 +138,7 @@ export function TechnologyChart() {
         <p>Hover over a bar to explore the data</p>
         
         <div className="flex flex-row gap-x-1">
-          <div className="bg-primary p-2" />
+          <div className="bg-primary w-3 h-3" />
           <div>Number of reported threats identified</div>
         </div>
       </ChartFooter>

@@ -33,7 +33,7 @@ export const FlowChartGeneralization: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col h-full items-center pt-16 font-medium text-center justify-center gap-y-5"
+      className="flex flex-col h-full items-center py-5 xl:pt-12 font-medium text-center justify-center gap-y-5"
     >
       {/* Box 1 */}
       <motion.div

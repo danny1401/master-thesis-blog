@@ -34,7 +34,7 @@ const SectionGrid: React.FC<React.PropsWithChildren<Props>> = ({
         </div>
       ) : (
         /* RIGHT COLUMN */
-        <div className={`relative aspect-square border border-foreground bg-section shadow-sm ${className}`}>
+        <div className={`relative lg:aspect-square border border-foreground bg-section shadow-sm ${className}`}>
           {children}
         </div>
       )}

@@ -16,6 +16,8 @@
   --hero-background: #f6f3ef;
   --section: #d4cfc9;
   --section-accent: #c4bbaf;
+
+  color-scheme: light dark;
 }
 
 .dark {
@@ -31,6 +33,10 @@
   --section: #1a253d;
   --section-accent: #22304f;
 
+}
+
+html, body {
+  color-scheme: light dark;
 }
 
 html {
