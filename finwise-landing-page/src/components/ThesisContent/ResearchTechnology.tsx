@@ -26,7 +26,7 @@ const ResearchTechnology: React.FC = () => {
             specific circumstances and organizations.
           </p>
           <p>
-            The analysis found that only a relatively small portion of the
+            The analysis found that only a relatively <b>small portion</b> of the
             reporting specifically addresses the selected technologies, while
             contextual factors dominate.
           </p>

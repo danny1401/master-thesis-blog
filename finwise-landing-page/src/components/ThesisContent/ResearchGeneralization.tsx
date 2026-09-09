@@ -21,15 +21,15 @@ const ResearchGeneralization: React.FC = () => {
             address a environment as a target of generalization.
           </p>
           <p>
-            The analysis investigated whether the experimental environment
-            actually matches the target environment researchers want to
+            The analysis investigated whether <b>the experimental environment</b> {' '}
+            actually matches <b>the target environment</b> researchers want to
             generalize to.
           </p>
           <p>
-            Although most experiments were conducted in academic settings, the
-            studies primarily aimed to generalize their findings to the software
-            industry. The thesis reports that only 8% had the same experimental
-            environment as their target environment, with 92% not matching.
+            Although most experiments were conducted in <b>academic settings</b>, the
+            studies primarily aimed to generalize their findings to <b>the software
+            industry</b>. The thesis reports that only <b>8%</b> had the same experimental
+            environment as their target environment, with <b>92%</b> not matching.
           </p>
         </SectionParagraph>
       </SectionGrid>

@@ -29,7 +29,7 @@ const ResearchEnvironment: React.FC = () => {
             environments.
           </p>
           <p>
-            16% of the experiments were implicit or did not mention their
+            Roughly <b>16%</b> of the experiments were implicit or did not report the
             experimental environments in their designs.
           </p>
         </SectionParagraph>
