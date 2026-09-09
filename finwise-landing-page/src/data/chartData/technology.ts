@@ -48,12 +48,6 @@ export const technologyThreats: TechnologyThreats[] = [
       "A threat that describes the temporal effect of the treatments in the experiments.",
   },
   {
-    category: "Location",
-    count: 0,
-    definition:
-      "A threat that describes the limitations in the specific conducted site due to economic conditions and organizational and national culture.",
-  },
-  {
     category: "Implicit",
     count: 5,
     definition:

@@ -16,16 +16,19 @@ const ResearchExternalValidity: React.FC = () => {
         <SectionTitle>What do researchers actually report?</SectionTitle>
 
         <SectionParagraph>
-          <p className="text-red-500">
-            ev explanation
+          <p className="italic font-light text-foreground">
+            External validity is about whether the cause-effect relationship
+            holds over variation in persons, settings, treatment variables, and
+            measurement variables.
           </p>
           <p>
             The most frequently mentioned threats in the discussions of external
-            validity revolved around subjects, followed by method, system, definition, and
-            task.
+            validity revolved around subjects, followed by method, system,
+            definition, and task.
           </p>
-          <p className="text-red-500">
-            1 more sentence
+          <p>
+            The METHOD segments was analyzed further in depth, given the content
+            on it had on technologies and contextual factors.
           </p>
         </SectionParagraph>
       </SectionGrid>

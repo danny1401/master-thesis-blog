@@ -30,43 +30,43 @@ const rowVariants: Variants = {
 
 export const TableGuidelines: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center w-full border bg-section">
-      <table className="w-full text-left text-sm text-foreground-accent">
-        <thead className="bg-background text-foreground uppercase font-semibold text-base border-b border-foreground">
-          <tr>
-            <th className="py-6 px-5 w-12">#</th>
-            <th className="py-6 w-52">Guideline</th>
-            <th className="py-6 px-5 pr-10">Description</th>
-          </tr>
-        </thead>
+    <div className="flex flex-col justify-center w-full h-full">
+      <div className="flex flex-col h-full w-full text-left text-sm text-foreground-accent">
+        {/* Header Row */}
+        <div className="flex shrink-0 bg-background text-foreground uppercase font-semibold text-base border-b border-foreground">
+          <div className="py-6 px-5 w-16 xl:w-16 shrink-0">#</div>
+          <div className="py-6 w-32 xl:w-52 shrink-0">Guideline</div>
+          <div className="py-6 px-5 pr-10 flex-1">Description</div>
+        </div>
 
-        <motion.tbody
+        {/* Animated Container */}
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="divide-y divide-foreground"
+          className="flex flex-col flex-1 h-full divide-y divide-foreground overflow-y-hidden scrollbar-none"
         >
           {guidelinesData.map((item) => {
             return (
-              <motion.tr
+              <motion.div
                 key={item.id}
                 variants={rowVariants}
-                className="transition-colors duration-200 hover:bg-section-accent"
+                className="flex flex-1 items-center transition-colors duration-200 hover:bg-section-accent"
               >
-                <td className="py-9 px-5 font-bold align-top">
+                <div className="py-5 px-5 w-16 xl:w-16 shrink-0 font-bold">
                   <span className="inline-block">{item.id}</span>
-                </td>
-                <td className="py-9 font-medium text-foreground align-top">
+                </div>
+                <div className="py-5 w-32 xl:w-52 shrink-0 font-medium text-foreground">
                   {item.title}
-                </td>
-                <td className="py-9 px-5 pr-10 leading-relaxed align-top">
+                </div>
+                <div className="py-5 px-5 pr-10 flex-1 leading-relaxed">
                   {item.description}
-                </td>
-              </motion.tr>
+                </div>
+              </motion.div>
             );
           })}
-        </motion.tbody>
-      </table>
+        </motion.div>
+      </div>
     </div>
   );
 };

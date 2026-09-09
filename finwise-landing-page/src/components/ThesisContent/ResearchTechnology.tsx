@@ -16,16 +16,19 @@ const ResearchTechnology: React.FC = () => {
         <SectionTitle>The use of technology</SectionTitle>
 
         <SectionParagraph>
-          <p className="text-red-500">
-            diving into method segments
-            <br />
-            explanation of technology and environment
+          <p className="italic font-light text-foreground">
+            Are researchers actually discussing how the technology itself
+            behaves differently in different contexts?
           </p>
           <p>
-            Are researchers actually discussing how the technology itself behaves differently in different contexts?
+            Previous research has shown that technologies cannot be classified
+            as universally good or bad, but rather how appropriate it is to
+            specific circumstances and organizations.
           </p>
           <p>
-            Your analysis found that only a relatively small portion of the reporting specifically addresses the selected technologies, while contextual factors dominate.
+            The analysis found that only a relatively small portion of the
+            reporting specifically addresses the selected technologies, while
+            contextual factors dominate.
           </p>
         </SectionParagraph>
       </SectionGrid>

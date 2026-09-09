@@ -21,7 +21,7 @@ const ResearchTopic: React.FC = () => {
         </SectionTitle>
 
         <SectionParagraph>
-          <p className="italic">
+          <p className="italic font-light text-foreground">
             How confidently can software engineering research be generalized
             beyond the environment in which it was studied?
           </p>

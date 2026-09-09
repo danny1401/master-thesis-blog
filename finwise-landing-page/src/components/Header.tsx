@@ -58,7 +58,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="bg-transparent top-0 left-0 right-0 absolute z-50">
+    <header className="bg-transparent top-0 left-0 right-0 fixed md:absolute z-50 border-b md:border-none border-foreground">
       {/* Scroll Progress Bar */}
       <div className="w-full bg-gray-200/20 h-1 fixed top-0 left-0 z-50">
         <div
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
 
       {/* Navigation Bar */}
       <nav
-        className={`shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-4 px-8 md:py-5 transition-colors duration-200 ${
+        className={`w-full shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-4 px-5 md:px-8 md:py-5 transition-colors duration-200 ${
           mounted && isDarkMode ? "dark:bg-gray-900" : ""
         }`}
       >
