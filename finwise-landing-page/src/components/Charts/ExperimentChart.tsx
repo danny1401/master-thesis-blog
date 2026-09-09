@@ -16,39 +16,7 @@ import ChartFooter from "@/components/Charts/ChartFooter";
 import { thesisData } from "@/data/thesis";
 import { experiments, ExperimentData } from "@/data/chartData/experiment";
 import { chartConfig } from "@/data/chartConfig";
-
-// Custom SVG text node renderer that wraps long category titles automatically
-const CustomYAxisTick = (props: any) => {
-  const { x, y, payload } = props;
-  const words = payload.value.split(" ");
-  
-  // Split long words into two lines if needed
-  let lines: string[] = [];
-  if (words.length > 1 && payload.value.length > 15) {
-    const mid = Math.ceil(words.length / 2);
-    lines = [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
-  } else {
-    lines = [payload.value];
-  }
-
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text
-        x={-8}
-        y={lines.length > 1 ? -4 : 4}
-        textAnchor="end"
-        fill={chartConfig.labelColor}
-        className="text-[10px] sm:text-xs font-medium"
-      >
-        {lines.map((line, index) => (
-          <tspan key={index} x={-8} dy={index === 0 ? 0 : 12}>
-            {line}
-          </tspan>
-        ))}
-      </text>
-    </g>
-  );
-};
+import { ChartYAxisTick } from "@/components/Charts/ChartYAxisTick";
 
 export default function ExperimentChart() {
   return (
@@ -115,7 +83,7 @@ export default function ExperimentChart() {
               width={110}
               tickLine={false}
               axisLine={false}
-              tick={<CustomYAxisTick />}
+              tick={<ChartYAxisTick />}
               interval={0}
             />
 

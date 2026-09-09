@@ -11,7 +11,7 @@
   --primary-accent: #f97316;
   --secondary: #22304f;
   
-  --bar: #3b82f6;
+  --bar: #2563eb;
 
   --hero-background: #e6e2dc;
   --section: #d4cfc9;
@@ -41,7 +41,6 @@ html, body {
 
 html {
   @apply scroll-smooth;
-  overflow-x: hidden;
 }
 
 body {
