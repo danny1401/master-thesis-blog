@@ -16,38 +16,7 @@ import ChartFooter from "@/components/Charts/ChartFooter";
 import { thesisData } from "@/data/thesis";
 import { technologyThreats, TechnologyThreats } from "@/data/chartData/technology";
 import { chartConfig } from "@/data/chartConfig";
-
-// SVG text node that automatically wraps long category titles onto multiple lines
-const CustomYAxisTick = (props: any) => {
-  const { x, y, payload } = props;
-  const words = payload.value.split(" ");
-  
-  let lines: string[] = [];
-  if (words.length > 1 && payload.value.length > 14) {
-    const mid = Math.ceil(words.length / 2);
-    lines = [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
-  } else {
-    lines = [payload.value];
-  }
-
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text
-        x={-8}
-        y={lines.length > 1 ? -4 : 4}
-        textAnchor="end"
-        fill={chartConfig.labelColor}
-        className="text-[10px] sm:text-xs font-medium"
-      >
-        {lines.map((line, index) => (
-          <tspan key={index} x={-8} dy={index === 0 ? 0 : 12}>
-            {line}
-          </tspan>
-        ))}
-      </text>
-    </g>
-  );
-};
+import { ChartYAxisTick } from "@/components/Charts/ChartYAxisTick";
 
 export function TechnologyChart() {
   return (
@@ -114,7 +83,7 @@ export function TechnologyChart() {
               width={110}
               axisLine={false}
               tickLine={false}
-              tick={<CustomYAxisTick />}
+              tick={<ChartYAxisTick />}
               interval={0}
             />
 
