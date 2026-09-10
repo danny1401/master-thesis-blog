@@ -6,7 +6,7 @@ import ResearchTopic from "@/components/ThesisContent/ResearchTopic";
 import ResearchQuestions from "@/components/ThesisContent/ResearchQuestions";
 import ResearchMethod from "@/components/ThesisContent/ResearchMethod";
 import ResearchExternalValidity from "@/components/ThesisContent/ResearchExternalValidity";
-import ResearchClaims from "./ThesisContent/ResearchClaims";
+// import ResearchClaims from "./ThesisContent/ResearchClaims";
 import ResearchTechnology from "@/components/ThesisContent/ResearchTechnology";
 import ResearchEnvironment from "@/components/ThesisContent/ResearchEnvironment";
 import ResearchGeneralization from "@/components/ThesisContent/ResearchGeneralization";

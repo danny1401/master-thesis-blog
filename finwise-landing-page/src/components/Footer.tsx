@@ -48,16 +48,12 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col gap-y-4">
-            <SendButton
-              href={siteDetails.repositoryUrl}
-              label="Github"
-              className="w-56 text-base font-semibold"
-            />
-            <SendButton
-              href={siteDetails.portfolioUrl}
-              label="Back to portfolio"
-              className="w-56 text-base font-semibold"
-            />
+            <a href={siteDetails.repositoryUrl} className="btn">
+              Github
+            </a>
+            <a href={siteDetails.portfolioUrl} className="btn">
+              Back to portfolio
+            </a>
             {footerDetails.email && (
               <SendButton
                 href={`mailto:${footerDetails.email}`}
