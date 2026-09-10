@@ -4,6 +4,7 @@ import SectionGrid from "../Section/SectionGrid";
 import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
+import SectionQuote from "../Section/SectionQuote";
 
 import { SegmentsChart } from "../Charts/SegmentChart";
 
@@ -16,11 +17,11 @@ const ResearchExternalValidity: React.FC = () => {
         <SectionTitle>What do researchers actually report?</SectionTitle>
 
         <SectionParagraph>
-          <p className="italic font-light text-foreground">
+          <SectionQuote>
             External validity is about whether the cause-effect relationship
             holds over variation in persons, settings, treatment variables, and
             measurement variables.
-          </p>
+          </SectionQuote>
           <p>
             The most frequently mentioned threats in the discussions of external
             validity revolved around subjects, followed by method, system,

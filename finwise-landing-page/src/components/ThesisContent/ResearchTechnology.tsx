@@ -6,6 +6,7 @@ import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
 
 import { TechnologyChart } from "../Charts/TechnologyChart";
+import SectionQuote from "../Section/SectionQuote";
 
 const ResearchTechnology: React.FC = () => {
   return (
@@ -16,17 +17,17 @@ const ResearchTechnology: React.FC = () => {
         <SectionTitle>The use of technology</SectionTitle>
 
         <SectionParagraph>
-          <p className="italic font-light text-foreground">
+          <SectionQuote>
             Are researchers actually discussing how the technology itself
             behaves differently in different contexts?
-          </p>
+          </SectionQuote>
           <p>
             Previous research has shown that technologies cannot be classified
             as universally good or bad, but rather how appropriate it is to
             specific circumstances and organizations.
           </p>
           <p>
-            The analysis found that only a relatively <b>small portion</b> of the
+            The analysis found that only a relatively <b>small portion (20%)</b> of the
             reporting specifically addresses the selected technologies, while
             contextual factors dominate.
           </p>

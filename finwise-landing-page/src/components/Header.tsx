@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 import { FaGithub, FaHouse } from "react-icons/fa6";
 import { FiSun, FiMoon } from "react-icons/fi";

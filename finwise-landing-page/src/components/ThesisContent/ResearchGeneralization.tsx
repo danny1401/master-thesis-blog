@@ -5,6 +5,7 @@ import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
 import SectionParagraph from "../Section/SectionParagraph";
 import { TargetChart } from "../Charts/TargetChart";
+import SectionQuote from "../Section/SectionQuote";
 
 const ResearchGeneralization: React.FC = () => {
   return (
@@ -15,11 +16,11 @@ const ResearchGeneralization: React.FC = () => {
         <SectionTitle>A gap in the generalizations</SectionTitle>
 
         <SectionParagraph>
-          <p className="italic font-light text-foreground">
+          <SectionQuote>
             The studied context often differs from the environment researchers
             want to generalize their findings to. Therefore, each study should
             address a environment as a target of generalization.
-          </p>
+          </SectionQuote>
           <p>
             The analysis investigated whether <b>the experimental environment</b> {' '}
             actually matches <b>the target environment</b> researchers want to
