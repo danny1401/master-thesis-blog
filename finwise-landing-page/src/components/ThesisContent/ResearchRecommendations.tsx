@@ -12,24 +12,29 @@ const ResearchRecommendations: React.FC = () => {
     <SectionContainer>
       {/* LEFT */}
       <SectionGrid side={true}>
-        <ChapterTitle>09 / Guidelines</ChapterTitle>
+        <ChapterTitle>10 / Guidelines</ChapterTitle>
         <SectionTitle>
           Recommendations <br /> for reporting
         </SectionTitle>
 
         <SectionParagraph>
           <p>
-            Your thesis investigates whether the environment in which an experiment occurs actually matches the environment researchers want to generalize to.
+            The thesis provides a reflection of how threats to external validity
+            in technologies are reported in prior software engineering research.
           </p>
           <p>
-            The environment studied often differs from the environment researchers want to generalize to.
+            Researchers need to report more of the threat of misaligned
+            environments. Due to the low number of threats to the experimental
+            environment and misaligned generalization claims, practitioners
+            should interpret the findings with caution.
           </p>
-          <p className="italic mt-5 max-w-lg text-lg leading-relaxed text-background-accent">
-            Generalization isn&apos;t just about whether an experiment works. It&apos;s about where, for whom, and under which conditions it works.
+          <p>
+            The recommendations presented in this section aim to improve
+            experimental design and the reporting of external validity for
+            practitioners.
           </p>
           <p className="lg:h-80"></p>
         </SectionParagraph>
-        
       </SectionGrid>
 
       {/* RIGHT COLUMN */}

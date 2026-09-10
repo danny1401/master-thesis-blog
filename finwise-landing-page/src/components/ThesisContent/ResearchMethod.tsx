@@ -22,7 +22,10 @@ const ResearchMethod: React.FC = () => {
             which they were expected to find a higher frequency of external
             validity discussions.
           </p>
-
+          <p>
+            Although, some articles report different types of experiment
+            designs, the main focus of the thesis was to analyze controlled experiments.
+          </p>
           <p>
             The methodology involved extracting and categorizing relevant text
             segments from discussions of external validity and other parts of
@@ -55,9 +58,7 @@ const ResearchMethod: React.FC = () => {
             <h4 className="font-normal text-sm">The extraction process</h4>
           </div>
 
-          <p className="pt-5">
-
-          </p>
+          <p className="pt-5"></p>
         </SectionParagraph>
       </SectionGrid>
 

@@ -6,10 +6,11 @@ import ResearchTopic from "@/components/ThesisContent/ResearchTopic";
 import ResearchQuestions from "@/components/ThesisContent/ResearchQuestions";
 import ResearchMethod from "@/components/ThesisContent/ResearchMethod";
 import ResearchExternalValidity from "@/components/ThesisContent/ResearchExternalValidity";
+import ResearchClaims from "./ThesisContent/ResearchClaims";
 import ResearchTechnology from "@/components/ThesisContent/ResearchTechnology";
 import ResearchEnvironment from "@/components/ThesisContent/ResearchEnvironment";
 import ResearchGeneralization from "@/components/ThesisContent/ResearchGeneralization";
-import ResearchExperimentCount from "@/components/ThesisContent/ResearchExperimentCount";
+import ResearchReplications from "@/components/ThesisContent/ResearchReplications";
 import ResearchFindings from "@/components/ThesisContent/ResearchFindings";
 import ResearchRecommendations from "@/components/ThesisContent/ResearchRecommendations";
 import {
@@ -34,6 +35,11 @@ const sections = [
     id: "external-validity",
     component: ResearchExternalValidity,
   },
+  /*
+  {
+    id: "claims",
+    component: ResearchClaims,
+  },*/
   {
     id: "technology",
     component: ResearchTechnology,
@@ -48,7 +54,7 @@ const sections = [
   },
   {
     id: "single-experiment-versus-multiple-experiments",
-    component: ResearchExperimentCount,
+    component: ResearchReplications,
   },
   {
     id: "findings",
