@@ -13,6 +13,6 @@ export const siteDetails = {
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
     googleAnalyticsId: '', // e.g. G-XXXXXXX,
     owner: 'Danny Thinh Tran',
-    repositoryUrl: 'https://github.com/danny1401/master-thesis-blog',
+    repositoryUrl: 'https://github.com/danny1401/master-thesis',
     portfolioUrl: 'https://dannytran.no/project/masterthesis',
 }
