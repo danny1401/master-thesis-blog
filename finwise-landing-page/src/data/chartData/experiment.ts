@@ -30,4 +30,24 @@ export const experiments: ExperimentData[] = [
     frequency: 6,
     percentage: 4.0,
   },
+  {
+    type: "Experimental study",
+    frequency: 4,
+    percentage: 2.6,
+  },
+  {
+    type: "Survey",
+    frequency: 3,
+    percentage: 2.0,
+  },
+  {
+    type: "Semi-controlled experiments",
+    frequency: 2,
+    percentage: 1.3,
+  },
+  {
+    type: "Case study",
+    frequency: 2,
+    percentage: 1.3,
+  },
 ];

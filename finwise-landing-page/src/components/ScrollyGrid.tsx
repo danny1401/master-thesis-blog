@@ -6,15 +6,17 @@ import ResearchTopic from "@/components/ThesisContent/ResearchTopic";
 import ResearchQuestions from "@/components/ThesisContent/ResearchQuestions";
 import ResearchMethod from "@/components/ThesisContent/ResearchMethod";
 import ResearchExternalValidity from "@/components/ThesisContent/ResearchExternalValidity";
+// import ResearchClaims from "./ThesisContent/ResearchClaims";
 import ResearchTechnology from "@/components/ThesisContent/ResearchTechnology";
-import ResearchGeneralization from "./ThesisContent/ResearchGeneralization";
-import ResearchExperimentCount from "./ThesisContent/ResearchExperimentCount";
-import ResearchFindings from "./ThesisContent/ResearchFindings";
-import ResearchRecommendations from "./ThesisContent/ResearchRecommendations";
+import ResearchEnvironment from "@/components/ThesisContent/ResearchEnvironment";
+import ResearchGeneralization from "@/components/ThesisContent/ResearchGeneralization";
+import ResearchReplications from "@/components/ThesisContent/ResearchReplications";
+import ResearchFindings from "@/components/ThesisContent/ResearchFindings";
+import ResearchRecommendations from "@/components/ThesisContent/ResearchRecommendations";
 import {
   ResearchColumnContext,
   type ResearchColumn,
-} from "./Section/SectionGrid";
+} from "@/components/Section/SectionGrid";
 
 const sections = [
   {
@@ -33,17 +35,26 @@ const sections = [
     id: "external-validity",
     component: ResearchExternalValidity,
   },
+  /*
+  {
+    id: "claims",
+    component: ResearchClaims,
+  },*/
   {
     id: "technology",
     component: ResearchTechnology,
   },
   {
-    id: "single-experiment-versus-multiple-experiments",
-    component: ResearchExperimentCount,
+    id: "environment",
+    component: ResearchEnvironment,
   },
   {
     id: "generalization",
     component: ResearchGeneralization,
+  },
+  {
+    id: "single-experiment-versus-multiple-experiments",
+    component: ResearchReplications,
   },
   {
     id: "findings",

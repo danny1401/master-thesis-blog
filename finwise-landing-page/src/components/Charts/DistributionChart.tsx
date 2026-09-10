@@ -195,13 +195,13 @@ export const DistributionChart: React.FC = () => {
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
 
-        <div className="flex flex-row gap-x-5">
+        <div className="flex flex-row gap-x-3">
           <div className="flex flex-row gap-x-1">
-            <div className="bg-bar p-2" />
+            <div className="bg-bar w-3 h-3" />
             <div>Single studies</div>
           </div>
           <div className="flex flex-row gap-x-1">
-            <div className="bg-primary p-2" />
+            <div className="bg-primary w-3 h-3" />
             <div>Family of experiments</div>
           </div>
         </div>

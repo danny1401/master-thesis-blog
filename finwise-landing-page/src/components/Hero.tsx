@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-0 sm:mb-1 md:mb-3 whitespace-nowrap text-secondary">
             {heroDetails.heading1}
           </h1>
-          <h1 className="text-xl sm:text-2xl md:text-4xl text-secondary">
+          <h1 className="text-lg sm:text-2xl md:text-4xl text-secondary">
             in <span className="text-primary italic whitespace-nowrap">Software Engineering Research</span>
           </h1>
         </div>

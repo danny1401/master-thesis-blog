@@ -16,10 +16,12 @@ import ChartFooter from "@/components/Charts/ChartFooter";
 import { thesisData } from "@/data/thesis";
 import { technologyThreats, TechnologyThreats } from "@/data/chartData/technology";
 import { chartConfig } from "@/data/chartConfig";
+import { ChartYAxisTick } from "@/components/Charts/ChartYAxisTick";
 
 export function TechnologyChart() {
   return (
-    <div className="flex flex-col justify-center w-full my-5 px-10">
+    // Scaled-down padding on mobile (px-4) to provide maximum horizontal width
+    <div className="flex flex-col justify-center w-full my-5 px-4 sm:px-10">
       {/* Header */}
       <ChartHeader>
         <div>
@@ -32,21 +34,26 @@ export function TechnologyChart() {
         </div>
 
         <div className="hidden text-right sm:block">
-          <p className="text-3xl font-semibold tracking-tight">{thesisData.method_threats}</p>
+          <p className="text-3xl font-semibold tracking-tight">
+            {thesisData.method_threats}
+          </p>
           <p className="text-xs text-secondary">threats</p>
         </div>
       </ChartHeader>
 
-      <div style={{ height: chartConfig.chartHeight }} className="w-full">
+      <div 
+        style={{ height: chartConfig.chartHeight }} 
+        className="w-full min-h-[400px]"
+      >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={technologyThreats}
             layout="vertical"
             margin={{
               top: 8,
-              right: 48,
+              right: 28,
               bottom: 8,
-              left: 8,
+              left: 0,
             }}
             barCategoryGap="28%"
           >
@@ -69,17 +76,15 @@ export function TechnologyChart() {
               }}
             />
 
+            {/* Y Axis - Optimized with dynamic label wrapping and reduced width */}
             <YAxis
               type="category"
               dataKey="category"
-              width={150}
+              width={110}
               axisLine={false}
               tickLine={false}
-              tick={{
-                fill: chartConfig.labelColor,
-                fontSize: 12,
-                fontWeight: 500,
-              }}
+              tick={<ChartYAxisTick />}
+              interval={0}
             />
 
             <Tooltip
@@ -116,7 +121,7 @@ export function TechnologyChart() {
               label={{
                 position: "right",
                 fill: "var(--secondary)",
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: 600,
               }}
             >
@@ -137,9 +142,9 @@ export function TechnologyChart() {
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
         
-        <div className="flex flex-row gap-x-1">
-          <div className="bg-primary p-2" />
-          <div>Number of reported threats identified</div>
+        <div className="flex flex-row gap-x-1 items-center">
+          <div className="bg-primary w-3 h-3 rounded-sm" />
+          <div className="text-xs">Number of reported threats identified</div>
         </div>
       </ChartFooter>
     </div>

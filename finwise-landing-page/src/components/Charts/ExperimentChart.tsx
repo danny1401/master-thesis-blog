@@ -16,10 +16,12 @@ import ChartFooter from "@/components/Charts/ChartFooter";
 import { thesisData } from "@/data/thesis";
 import { experiments, ExperimentData } from "@/data/chartData/experiment";
 import { chartConfig } from "@/data/chartConfig";
+import { ChartYAxisTick } from "@/components/Charts/ChartYAxisTick";
 
 export default function ExperimentChart() {
   return (
-    <div className="w-full my-5 px-10">
+    // Reduced horizontal padding on small screens to give maximum room to the chart
+    <div className="w-full my-5 px-4 sm:px-10">
       <ChartHeader>
         <div>
           <h3 className="text-2xl font-semibold tracking-tight">
@@ -31,22 +33,27 @@ export default function ExperimentChart() {
         </div>
 
         <div className="hidden text-right sm:block">
-          <p className="text-3xl font-semibold tracking-tight">{thesisData.experiments}</p>
+          <p className="text-3xl font-semibold tracking-tight">
+            {thesisData.experiments}
+          </p>
           <p className="text-xs text-secondary">experiments</p>
         </div>
       </ChartHeader>
 
-      {/* Chart */}
-      <div style={{ height: chartConfig.chartHeight }} className="w-full">
+      {/* Dynamic chart height scaling based on bar items */}
+      <div 
+        style={{ height: chartConfig.chartHeight }} 
+        className="w-full min-h-[420px]"
+      >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={experiments}
             layout="vertical"
             margin={{
               top: 4,
-              right: 24,
+              right: 28,
               bottom: 4,
-              left: 8,
+              left: 0,
             }}
           >
             {/* Grid */}
@@ -69,18 +76,15 @@ export default function ExperimentChart() {
               }}
             />
 
-            {/* Y Axis */}
+            {/* Y Axis - Optimized with custom text wrapping & smaller mobile width */}
             <YAxis
               type="category"
               dataKey="type"
-              width={170}
+              width={110}
               tickLine={false}
               axisLine={false}
-              tick={{
-                fill: chartConfig.labelColor,
-                fontSize: 12,
-                fontWeight: 500,
-              }}
+              tick={<ChartYAxisTick />}
+              interval={0}
             />
 
             {/* Tooltip */}
@@ -92,7 +96,6 @@ export default function ExperimentChart() {
                     <div className="flex gap-6">
                       <div>
                         <p className="text-xs text-neutral-500">Frequency</p>
-
                         <p className="mt-0.5 text-lg font-semibold text-neutral-800">
                           {item.frequency}
                         </p>
@@ -100,7 +103,6 @@ export default function ExperimentChart() {
 
                       <div>
                         <p className="text-xs text-neutral-500">Percentage</p>
-
                         <p className="mt-0.5 text-lg font-semibold text-neutral-800">
                           {item.percentage}%
                         </p>
@@ -119,13 +121,13 @@ export default function ExperimentChart() {
             <Bar
               dataKey="frequency"
               radius={[0, chartConfig.barRadius, chartConfig.barRadius, 0]}
-              barSize={chartConfig.barHeight}
+              barSize={18}
               animationDuration={900}
               animationEasing="ease-out"
               label={{
                 position: "right",
                 fill: "var(--secondary)",
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: 600,
               }}
             >
@@ -145,10 +147,10 @@ export default function ExperimentChart() {
 
       <ChartFooter>
         <p>Hover over a bar to explore the data</p>
-        
-        <div className="flex flex-row gap-x-1">
-          <div className="bg-primary p-2" />
-          <div>Frequency</div>
+
+        <div className="flex flex-row gap-x-1 items-center">
+          <div className="bg-primary w-3 h-3 rounded-sm" />
+          <div className="text-xs">Frequency</div>
         </div>
       </ChartFooter>
     </div>

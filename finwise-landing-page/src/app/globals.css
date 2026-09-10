@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #f4f1eb;
+  --background: #e6e2dc;
   --foreground: #171717;
   --foreground-accent: #454545;
 
@@ -11,11 +11,13 @@
   --primary-accent: #f97316;
   --secondary: #22304f;
   
-  --bar: #3b82f6;
+  --bar: #2563eb;
 
-  --hero-background: #f6f3ef;
-  --section: #e6e2dc;
-  --section-accent: #d4cfc9;
+  --hero-background: #e6e2dc;
+  --section: #d4cfc9;
+  --section-accent: #c4bbaf;
+
+  color-scheme: light dark;
 }
 
 .dark {
@@ -31,6 +33,10 @@
   --section: #1a253d;
   --section-accent: #22304f;
 
+}
+
+html, body {
+  color-scheme: light dark;
 }
 
 html {
@@ -71,6 +77,13 @@ h1, h2, h3, h4, h5, h6 {
   @apply mb-10;
 }
 
+.btn {
+  @apply relative justify-center inline-flex items-center;
+  @apply gap-2 px-6 py-3 w-56 text-base rounded-xl;
+  @apply text-white font-medium;
+  @apply bg-primary hover:bg-primary-accent shadow-md hover:shadow-primary;
+  @apply transition-all duration-200 ease-in-out overflow-hidden select-none cursor-pointer;
+}
 
 /* Animations */
 @keyframes sectionIn {

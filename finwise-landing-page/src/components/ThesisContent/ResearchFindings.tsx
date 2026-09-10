@@ -3,57 +3,68 @@ import SectionContainer from "../Section/SectionContainer";
 import SectionGrid from "../Section/SectionGrid";
 import ChapterTitle from "../Section/ChapterTitle";
 import SectionTitle from "../Section/SectionTitle";
-import SectionParagraph from "../Section/SectionParagraph";
+import SectionQuote from "../Section/SectionQuote";
+
+import TableTaxonomy from "@/components/Charts/TableTaxonomy";
 
 const ResearchFindings: React.FC = () => {
   return (
     <SectionContainer>
       {/* LEFT COLUMN */}
       <SectionGrid side={true}>
-        <ChapterTitle>08 / Findings</ChapterTitle>
-        <SectionTitle>Three Major Findings</SectionTitle>
+        <ChapterTitle>09 / Discussion</ChapterTitle>
+        <SectionTitle>Findings</SectionTitle>
 
-        <SectionParagraph>
-          <p>
-            text
-          </p>
-        </SectionParagraph>
+        <div className="mt-5 max-w-lg space-y-2 text-lg font-normal leading-relaxed text-background-accent">
+          <SectionQuote>
+            Generalization isn&apos;t just about whether an experiment works.
+            It&apos;s about where, for whom, and under which conditions it
+            works.
+          </SectionQuote>
+          <br />
+
+          <p>1. Low number of threats in discussions of external validity</p>
+          <div className="pl-8 text-sm">
+            <ul className="list-disc list-outside space-y-2">
+              <li>
+                Two-fifths of all articles report threats to technologies and
+                its contextual factors.
+              </li>
+            </ul>
+          </div>
+          <br />
+
+          <p>2. Types of threats to technologies</p>
+          <div className="pl-8 text-sm">
+            <ul className="list-disc list-outside space-y-2">
+              <li>
+                Based on previous research and observations of the discussions,
+                a conceptual taxonomy can serve as checklist for reporting distinct
+                threats to technologies regarding external validity.
+              </li>
+            </ul>
+          </div>
+          <br />
+
+          <p>3. Low number of aligned environments</p>
+          <div className="pl-8 text-sm">
+            <ul className="list-disc list-outside space-y-2">
+              <li>
+                Only 16 instances of threats to the experimental environment.
+              </li>
+              <li>
+                The thesis reports that only 8% had the same experimental
+                environment as their target environment, with 92% not matching.
+              </li>
+            </ul>
+          </div>
+          <p className="lg:h-32" />
+        </div>
       </SectionGrid>
 
       {/* RIGHT COLUMN */}
       <SectionGrid side={false}>
-        <div className="grid h-full place-items-center">
-          {" "}
-          <div className="grid grid-cols-3 gap-8 text-background">
-            {" "}
-            {[
-              "I",
-              "love",
-              "AI",
-              "and",
-              "attention",
-              "too",
-              "much",
-              "today",
-              "?",
-            ].map((word, i) => (
-              <div
-                key={`${word}-${i}`}
-                className={` relative rounded-lg border px-4 py-3 text-center text-sm transition-all ${i === 4 ? "bg-black text-white" : "bg-white"} `}
-              >
-                {" "}
-                {word}{" "}
-                {i === 4 && (
-                  <div className="absolute inset-0 -z-10 animate-pulse rounded-lg bg-black/10" />
-                )}{" "}
-              </div>
-            ))}{" "}
-          </div>{" "}
-        </div>{" "}
-        <div className="absolute bottom-6 left-8 font-mono text-xs text-neutral-400">
-          {" "}
-          every token can attend to every other token{" "}
-        </div>{" "}
+        <TableTaxonomy />
       </SectionGrid>
     </SectionContainer>
   );

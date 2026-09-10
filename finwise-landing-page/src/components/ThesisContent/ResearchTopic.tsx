@@ -21,7 +21,7 @@ const ResearchTopic: React.FC = () => {
         </SectionTitle>
 
         <SectionParagraph>
-          <p className="italic">
+          <p className="italic font-light text-foreground">
             How confidently can software engineering research be generalized
             beyond the environment in which it was studied?
           </p>
@@ -46,8 +46,8 @@ const ResearchTopic: React.FC = () => {
             <div>Articles</div>
           </div>
           <div className="flex flex-col justify-center items-center bg-section p-4">
-            <div className="font-bold text-3xl sm:text-5xl sm:mb-3 whitespace-nowrap">2015-2019</div>
-            <div>Publication period</div>
+            <div className="font-bold text-3xl md:text-4xl xl:text-5xl mb-3 whitespace-nowrap">2015-2019</div>
+            <div className="text-sm sm:text-lg">Publication period</div>
           </div>
           <div className="flex flex-col justify-center items-center bg-section p-4">
             <div className="font-bold text-5xl mb-3">{thesisData.experiments}</div>

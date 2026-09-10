@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
-import { FaHouse } from "react-icons/fa6";
+import { FaGithub, FaHouse } from "react-icons/fa6";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 import { siteDetails } from "@/data/siteDetails";
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="bg-transparent top-0 left-0 right-0 absolute z-50">
+    <header className="bg-transparent top-0 left-0 right-0 fixed md:absolute z-50 border-b md:border-none border-foreground">
       {/* Scroll Progress Bar */}
       <div className="w-full bg-gray-200/20 h-1 fixed top-0 left-0 z-50">
         <div
@@ -69,67 +69,51 @@ const Header: React.FC = () => {
 
       {/* Navigation Bar */}
       <nav
-        className={`shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-4 px-8 md:py-5 transition-colors duration-200 ${
+        className={`w-full shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-4 px-5 md:px-8 md:py-5 transition-colors duration-200 ${
           mounted && isDarkMode ? "dark:bg-gray-900" : ""
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-x-4">
-          <FaHouse className="text-foreground dark:text-foreground min-w-fit w-7 h-7 mb-1" />
-          <span className="hidden sm:block manrope text-sm sm:text-base md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
-            {siteDetails.shortName}
-          </span>
-          <span className="block sm:hidden manrope text-sm sm:text-base md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
-            {siteDetails.categoryName}
-          </span>
-        </Link>
 
-        <div className="hidden md:flex items-center gap-6">
-          <button
-              onClick={toggleTheme}
-              type="button"
-              aria-label="Toggle dark mode"
-              className="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center justify-center"
-            >
-              {mounted && isDarkMode ? (
-                <FiSun className="w-5 h-5 text-white" />
-              ) : (
-                <FiMoon className="w-5 h-5 text-gray-600" />
-              )}
-            </button>
+        <div className="flex items-center gap-x-4">
+          <Link href={siteDetails.portfolioUrl}>
+            <FaHouse className="text-foreground dark:text-foreground min-w-fit w-7 h-7 mb-1" />
+          </Link>
+
+          <Link href={siteDetails.siteUrl}>
+            <span className="hidden sm:block manrope text-sm sm:text-base md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
+              {siteDetails.shortName}
+            </span>
+            <span className="block sm:hidden manrope text-sm sm:text-base md:text-xl font-semibold text-foreground dark:text-white cursor-pointer">
+              {siteDetails.shorterName}
+            </span>
+          </Link>
         </div>
 
-        {/* Mobile Menu & Theme Button Container */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="flex flex-row items-center gap-x-1 sm:gap-x-5">
+          <Link
+            href={siteDetails.repositoryUrl}
+            className="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center justify-center"
+          >
+            {mounted && isDarkMode ? (
+              <FaGithub className="w-5 h-5 text-white" />
+            ) : (
+              <FaGithub className="w-5 h-5 text-gray-600" />
+            )}
+          </Link>
+
           <button
             onClick={toggleTheme}
             type="button"
             aria-label="Toggle dark mode"
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+            className="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center justify-center"
           >
             {mounted && isDarkMode ? (
-              <FiSun className="w-5 h-5 text-white" />
+              <FiSun className="w-5 h-5" />
             ) : (
-              <FiMoon className="w-5 h-5 text-gray-600" />
+              <FiMoon className="w-5 h-5" />
             )}
           </button>
-
-          {/*
-          <button
-            onClick={toggleMenu}
-            type="button"
-            className="bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
-            aria-controls="mobile-menu"
-            aria-expanded={isOpen}
-          >
-            {isOpen ? (
-              <HiOutlineXMark className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <HiBars3 className="h-6 w-6" aria-hidden="true" />
-            )}
-            <span className="sr-only">Toggle navigation</span>
-          </button>
-           */}
         </div>
       </nav>
 
